@@ -26,16 +26,16 @@ SCALE_CHARACTER_GLYPHS_THRESHOLD = 0.1
 SCALE_LIGATURE_THRESHOLD = 0.044
 
 # Generate fira otf from ttf files
-fira_ttf_list = glob('fonts/fira/distr/ttf/*')
+# fira_ttf_list = glob('fonts/fira/distr/ttf/*')
 
-if not fira_ttf_list:
-    print("Error: pattern '%s' didn't match any fira fonts." % fira_ttf_list)
-    sys.exit(1)
+# if not fira_ttf_list:
+#     print("Error: pattern '%s' didn't match any fira fonts." % fira_ttf_list)
+#     sys.exit(1)
 
-for fira_ttf in fira_ttf_list:
-    font = fontforge.open(fira_ttf)
-    print(fira_ttf.replace('.ttf', '.otf'))
-    font.generate(fira_ttf.replace('.ttf', '.otf'))
+# for fira_ttf in fira_ttf_list:
+#     font = fontforge.open(fira_ttf)
+#     print(fira_ttf.replace('.ttf', '.otf'))
+#     font.generate(fira_ttf.replace('.ttf', '.otf'))
 
 # Fonts that will be ligaturized. ####
 # Don't put fonts licensed under UFL here, and don't put fonts licensed under
@@ -43,145 +43,132 @@ for fira_ttf in fira_ttf_list:
 
 tasks = [
     {
-        'input': 'fonts/hack/build/ttf/Hack-Regular.ttf',
+        'input': 'fonts/sourcecodepro/SourceCodePro-Black.ttf',
         'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Regular.ttf'
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-ExtraBold.ttf'
         ]
     },
     {
-        'input': 'fonts/hack/build/ttf/Hack-Bold.ttf',
+        'input': 'fonts/sourcecodepro/SourceCodePro-BlackIt.ttf',
         'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-ExtraBoldItalic.ttf'
+        ]
+    },
+    {
+        'input': 'fonts/sourcecodepro/SourceCodePro-Bold.ttf',
+        'ligatures': [
             'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Bold.ttf'
         ]
     },
     {
-        'input': 'fonts/hack/build/ttf/Hack-BoldItalic.ttf',
+        'input': 'fonts/sourcecodepro/SourceCodePro-BoldIt.ttf',
         'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
             'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
         ]
     },
     {
-        'input': 'fonts/hack/build/ttf/Hack-Italic.ttf',
+        'input': 'fonts/sourcecodepro/SourceCodePro-ExtraLight.ttf',
         'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-ExtraLight.ttf'
+        ]
+    },
+    {
+        'input': 'fonts/sourcecodepro/SourceCodePro-ExtraLightIt.ttf',
+        'ligatures': [
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-ExtraLightItalic.ttf'
+        ]
+    },
+    {
+        'input': 'fonts/sourcecodepro/SourceCodePro-It.ttf',
+        'ligatures': [
             'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Italic.ttf'
         ]
     },
     {
-        'input': 'fonts/nerd-fonts/Hack Regular Nerd Font Complete.ttf',
+        'input': 'fonts/sourcecodepro/SourceCodePro-Light.ttf',
         'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Light.ttf'
+        ]
+    },
+    {
+        'input': 'fonts/sourcecodepro/SourceCodePro-LightIt.ttf',
+        'ligatures': [
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-LightItalic.ttf'
+        ]
+    },
+    {
+        'input': 'fonts/sourcecodepro/SourceCodePro-Medium.ttf',
+        'ligatures': [
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Medium.ttf'
+        ]
+    },
+    {
+        'input': 'fonts/sourcecodepro/SourceCodePro-MediumIt.ttf',
+        'ligatures': [
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-MediumItalic.ttf'
+        ]
+    },
+    {
+        'input': 'fonts/sourcecodepro/SourceCodePro-Regular.ttf',
+        'ligatures': [
             'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Regular.ttf'
         ]
     },
     {
-        'input': 'fonts/nerd-fonts/Hack Regular Nerd Font Complete Mono.ttf',
+        'input': 'fonts/sourcecodepro/SourceCodePro-Semibold.ttf',
         'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Regular.ttf'
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-SemiBold.ttf'
         ]
     },
     {
-        'input': 'fonts/nerd-fonts/Hack Regular Nerd Font Complete Mono Windows Compatible.ttf',
+        'input': 'fonts/sourcecodepro/SourceCodePro-SemiboldIt.ttf',
         'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Regular.ttf'
+            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-SemiBoldItalic.ttf'
         ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Regular Nerd Font Complete Windows Compatible.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Regular.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Italic Nerd Font Complete.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Italic.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Italic Nerd Font Complete Mono.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Italic.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Italic Nerd Font Complete Mono Windows Compatible.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Italic.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Italic Nerd Font Complete Windows Compatible.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Regular.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Italic.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Bold Nerd Font Complete.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Bold.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Bold Nerd Font Complete Mono.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Bold.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Bold Nerd Font Complete Mono Windows Compatible.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Bold.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Bold Nerd Font Complete Windows Compatible.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Bold.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Bold Italic Nerd Font Complete.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Bold Italic Nerd Font Complete Mono.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Bold Italic Nerd Font Complete Mono Windows Compatible.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
-        ]
-    },
-    {
-        'input': 'fonts/nerd-fonts/Hack Bold Italic Nerd Font Complete Windows Compatible.ttf',
-        'ligatures': [
-            'fonts/fira/distr/ttf/FiraCode-Bold.otf',
-            'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
-        ]
-    },
+    }
+    #,
+    # {
+    #     'input': 'fonts/nerd-fonts/Hack Bold Nerd Font Complete Mono Windows Compatible.ttf',
+    #     'ligatures': [
+    #         'fonts/fira/distr/ttf/FiraCode-Bold.otf',
+    #         'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Bold.ttf'
+    #     ]
+    # },
+    # {
+    #     'input': 'fonts/nerd-fonts/Hack Bold Nerd Font Complete Windows Compatible.ttf',
+    #     'ligatures': [
+    #         'fonts/fira/distr/ttf/FiraCode-Bold.otf',
+    #         'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-Bold.ttf'
+    #     ]
+    # },
+    # {
+    #     'input': 'fonts/nerd-fonts/Hack Bold Italic Nerd Font Complete.ttf',
+    #     'ligatures': [
+    #         'fonts/fira/distr/ttf/FiraCode-Bold.otf',
+    #         'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
+    #     ]
+    # },
+    # {
+    #     'input': 'fonts/nerd-fonts/Hack Bold Italic Nerd Font Complete Mono.ttf',
+    #     'ligatures': [
+    #         'fonts/fira/distr/ttf/FiraCode-Bold.otf',
+    #         'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
+    #     ]
+    # },
+    # {
+    #     'input': 'fonts/nerd-fonts/Hack Bold Italic Nerd Font Complete Mono Windows Compatible.ttf',
+    #     'ligatures': [
+    #         'fonts/fira/distr/ttf/FiraCode-Bold.otf',
+    #         'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
+    #     ]
+    # },
+    # {
+    #     'input': 'fonts/nerd-fonts/Hack Bold Italic Nerd Font Complete Windows Compatible.ttf',
+    #     'ligatures': [
+    #         'fonts/fira/distr/ttf/FiraCode-Bold.otf',
+    #         'fonts/jetbrainsmono/fonts/ttf/JetBrainsMono-BoldItalic.ttf'
+    #     ]
+    # },
 ]
 
 for task in tasks:
